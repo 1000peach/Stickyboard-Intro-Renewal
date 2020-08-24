@@ -10,9 +10,10 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 // Layout
 import Layout from './Layout';
 // Component
-const SamplePage= loadable(() => import('components/page/SamplePage'));
+const IntroPage = loadable(() => import('components/page/IntroPage'));
+const SamplePage = loadable(() => import('components/page/SamplePage'));
 // Not found
-const NotFoundPage= loadable(() => import('components/page/NotFoundPage'));
+const NotFoundPage = loadable(() => import('components/page/NotFoundPage'));
 
 // Dialog
 import DialogDict from 'components/dialog';
@@ -74,6 +75,7 @@ class App extends React.Component {
                                     <Redirect exact from='/' to='/sample' />
 
                                     {/* Component */}
+                                    <Route path='/intro' component={IntroPage} />
                                     <Route path='/sample' component={SamplePage} />
                                     {/* Not found */}
                                     <Route path='*' component={NotFoundPage} />

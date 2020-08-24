@@ -6,6 +6,16 @@ import Timeline from '@material-ui/icons/Timeline';
 
 const SidebarMenuDict = {
     /******************
+    * Intro Menu
+    ******************/
+    INTRO: [{
+        title: 'Intro',
+        icon: <Timeline />,
+        url: '/intro',
+        value: 101,
+        need_permission: false
+    }],
+    /******************
      * Component Menus
      ******************/
     COMPONENTS: [
@@ -13,7 +23,7 @@ const SidebarMenuDict = {
             title: 'Sample',
             icon: <Timeline />,
             url: '/sample',
-            value: 101,
+            value: 201,
             need_permission: false,
         },
     ],
