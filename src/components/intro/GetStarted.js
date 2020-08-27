@@ -13,8 +13,8 @@ export default function GetStart() {
                 <StickyBoard>StickyBoard!</StickyBoard>
             </StartTitle>
             <StartDisc>
-                <span>StickyBoard</span>is on-demand dashboard solution based on
-                React. <br />
+                <Circle>StickyBoard</Circle>is on-demand dashboard solution
+                based on React. <br />
                 Users can make their own dashboard with locating component.
             </StartDisc>
             <GitHubLink>
@@ -59,28 +59,28 @@ const StickyBoard = styled.span`
     left: 10px;
 `;
 
+export const Circle = styled.span`
+    position: relative;
+    z-index: 0;
+
+    &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+
+        position: absolute;
+        left: -7px;
+        top: -5px;
+        z-index: -1;
+
+        background-color: rgb(255, 193, 7);
+        border-radius: 50%;
+    }
+`;
+
 const StartDisc = styled.p`
     font-size: 18px;
     text-align: center;
-
-    & span {
-        position: relative;
-        z-index: 0;
-
-        &::before {
-            content: '';
-            width: 20px;
-            height: 20px;
-
-            position: absolute;
-            left: -7px;
-            top: -5px;
-            z-index: -1;
-
-            background-color: rgb(255, 193, 7);
-            border-radius: 50%;
-        }
-    }
 `;
 
 const GitHubLink = styled.div`
