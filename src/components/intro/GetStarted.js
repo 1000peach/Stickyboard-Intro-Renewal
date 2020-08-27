@@ -13,9 +13,7 @@ export default function GetStart() {
                 <StickyBoard>StickyBoard!</StickyBoard>
             </StartTitle>
             <StartDisc>
-                <span>StickyBoard</span>is on-demand dashboard solution based on
-                React. <br />
-                Users can make their own dashboard with locating component.
+                <span>Fully customizable </span>Web Admin/Dashboard starter kit based on React.
             </StartDisc>
             <GitHubLink>
                 <Star
