@@ -13,7 +13,16 @@ const RechartsRadarChart = loadable(() => import('./RechartsRadarChart'));
 const RechartsScatterChart = loadable(() => import('./RechartsScatterChart'));
 const RechartsTinyChart = loadable(() => import('./RechartsTinyChart'));
 const RechartsTreeMap = loadable(() => import('./RechartsTreeMap'));
-const RechartsStackedBarChart = loadable(() => import('./RechartsStackedBarChart'));
+const RechartsStackedBarChart = loadable(() =>
+    import('./RechartsStackedBarChart')
+);
+// Highcharts
+const HighchartsLineChart = loadable(() => import('./HighchartsLineChart'));
+const HighchartsBarChart = loadable(() => import('./HighchartsBarChart'));
+const HighchartsPieChart = loadable(() => import('./HighchartsPieChart'));
+const HighchartsPolarChart = loadable(() => import('./HighchartsPolarChart'));
+const HighchartsAreaChart = loadable(() => import('./HighchartsAreaChart'));
+const HighchartsBoxPlot = loadable(() => import('./HighchartsBoxPlot'));
 
 export default {
     Recharts: [
@@ -71,6 +80,38 @@ export default {
             Name: 'RechartsStackedBarChart',
             Description: 'RechartsStackedBarChart sample',
             Component: RechartsStackedBarChart,
+        },
+    ],
+    Highcharts: [
+        {
+            Name: 'HighchartsLineChart',
+            Description: 'HighchartsLineChart sample',
+            Component: HighchartsLineChart,
+        },
+        {
+            Name: 'HighchartsBarChart',
+            Description: 'HighchartsBarChart sample',
+            Component: HighchartsBarChart,
+        },
+        {
+            Name: 'HighchartsPieChart',
+            Description: 'HighchartsPieChart sample',
+            Component: HighchartsPieChart,
+        },
+        {
+            Name: 'HighchartsPolarChart',
+            Description: 'HighchartsPolarChart sample',
+            Component: HighchartsPolarChart,
+        },
+        {
+            Name: 'HighchartsAreaChart',
+            Description: 'HighchartsAreaChart sample',
+            Component: HighchartsAreaChart,
+        },
+        {
+            Name: 'HighchartsBoxPlot',
+            Description: 'HighchartsBoxPlot sample',
+            Component: HighchartsBoxPlot,
         },
     ],
 };
