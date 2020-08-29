@@ -14,6 +14,6 @@ export default function IntroPageContent() {
 }
 
 const IntroContent = styled.div`
-    padding: 0 100px;
+    padding: 0 50px;
     width: 100%;
 `;

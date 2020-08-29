@@ -12,6 +12,7 @@ export default function SectionTitle({ title }) {
 }
 
 const Title = styled.p`
+    margin-bottom: 10px;
     font-size: 28px;
     font-weight: bold;
 `;

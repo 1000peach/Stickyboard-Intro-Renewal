@@ -107,10 +107,6 @@ class IntroPage extends React.Component {
         return (
             <div>
                 <IntroPageContent />
-                <PageBaseContainer
-                    initialLayout={initialLayout}
-                    initialBlocks={initialBlocks}
-                />
             </div>
         );
     }
