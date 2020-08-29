@@ -138,12 +138,6 @@ export default function SupportChart() {
         setChartMode(newValue);
     };
 
-    useEffect(() => {
-        return () => {
-            setChartMode(-1);
-        };
-    }, []);
-
     return (
         <ChartSection>
             <SectionTitle title="Supports various chart" />

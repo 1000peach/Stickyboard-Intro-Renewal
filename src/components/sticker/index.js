@@ -7,15 +7,8 @@ const RechartsLineChart = loadable(() => import('./RechartsLineChart'));
 const RechartsBarChart = loadable(() => import('./RechartsBarChart'));
 const RechartsComposedChart = loadable(() => import('./RechartsComposedChart'));
 const RechartsMultiLineChart = loadable(() => import('./RechartsMultiLineChart'));
-const RechartsPieChart = loadable(() => import('./RechartsPieChart'));
 const RechartsAreaChart = loadable(() => import('./RechartsAreaChart'));
-const RechartsRadarChart = loadable(() => import('./RechartsRadarChart'));
-const RechartsScatterChart = loadable(() => import('./RechartsScatterChart'));
-const RechartsTinyChart = loadable(() => import('./RechartsTinyChart'));
-const RechartsTreeMap = loadable(() => import('./RechartsTreeMap'));
-const RechartsStackedBarChart = loadable(() =>
-    import('./RechartsStackedBarChart')
-);
+const RechartsStackedBarChart = loadable(() => import('./RechartsStackedBarChart'));
 // Highcharts
 const HighchartsLineChart = loadable(() => import('./HighchartsLineChart'));
 const HighchartsBarChart = loadable(() => import('./HighchartsBarChart'));
@@ -47,34 +40,9 @@ export default {
             Component: RechartsMultiLineChart,
         },
         {
-            Name: 'RechartsPieChart',
-            Description: 'RechartsPieChart sample',
-            Component: RechartsPieChart,
-        },
-        {
             Name: 'RechartsAreaChart',
             Description: 'RechartsAreaChart sample',
             Component: RechartsAreaChart,
-        },
-        {
-            Name: 'RechartsRadarChart',
-            Description: 'RechartsRadarChart sample',
-            Component: RechartsRadarChart,
-        },
-        {
-            Name: 'RechartsScatterChart',
-            Description: 'RechartsScatterChart sample',
-            Component: RechartsScatterChart,
-        },
-        {
-            Name: 'RechartsTinyChart',
-            Description: 'RechartsTinyChart sample',
-            Component: RechartsTinyChart,
-        },
-        {
-            Name: 'RechartsTreeMap',
-            Description: 'RechartsTreeMap sample',
-            Component: RechartsTreeMap,
         },
         {
             Name: 'RechartsStackedBarChart',
