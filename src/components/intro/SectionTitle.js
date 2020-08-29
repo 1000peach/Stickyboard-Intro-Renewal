@@ -1,3 +1,5 @@
+// src/components/intro/SectionTitle.js
+
 import React from 'react';
 import styled from 'styled-components';
 

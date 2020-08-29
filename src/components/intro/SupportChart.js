@@ -1,3 +1,5 @@
+// src/components/intro/SupportChart.js
+
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 

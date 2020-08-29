@@ -1,4 +1,4 @@
-// src/components/page/SamplePage.js
+// src/components/page/IntroPage.js
 
 import React from 'react';
 import PropTypes from 'prop-types';
