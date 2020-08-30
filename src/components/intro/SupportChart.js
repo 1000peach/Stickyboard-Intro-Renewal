@@ -1,6 +1,6 @@
 // src/components/intro/SupportChart.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -120,14 +120,14 @@ const initialHighBlocks = [
     { i: 'HighchartsBoxPlot' },
 ];
 
-const tabStyles = makeStyles({
+export const tabStyles = makeStyles({
     appBar: {
         background: 'none',
     },
-    chart: {
+    firstLabel: {
         margin: '0 0 0 auto',
     },
-    highCharts: {
+    secondLabel: {
         float: 'right',
     },
 });
@@ -157,9 +157,9 @@ export default function SupportChart() {
                         value={chartMode}
                         onChange={handleChange}
                         aria-label="chart tabs">
-                        <Tab className={classes.chart} label="Chart" />
+                        <Tab className={classes.firstLabel} label="Chart" />
                         <Tab
-                            className={classes.highCharts}
+                            className={classes.secondLabel}
                             label="HighCharts"
                         />
                     </Tabs>
@@ -192,13 +192,15 @@ function TabPanel({ value, index, children }) {
     );
 }
 
-const ChartSection = styled.section`
-    margin: auto;
-    padding: 50px 0;
+export const ChartSection = styled.section`
+    margin: 100px auto;
+
+    display: flex;
+    flex-direction: column;
 
     max-width: 1350px;
     width: 100%;
-    height: 850px;
+    min-height: 850px;
 
     & small {
         margin: 0 0 0 25px;

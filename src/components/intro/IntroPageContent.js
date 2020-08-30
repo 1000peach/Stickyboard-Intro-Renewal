@@ -5,12 +5,14 @@ import styled from 'styled-components';
 
 import GetStarted from '../intro/GetStarted';
 import SupportChart from '../intro/SupportChart';
+import SupportMap from '../intro/SupportMap';
 
 export default function IntroPageContent() {
     return (
         <IntroContent>
             <GetStarted />
             <SupportChart />
+            <SupportMap />
         </IntroContent>
     );
 }
