@@ -1,18 +1,15 @@
+// src/components/intro/SupportMap.js
+
 import React, { useState } from 'react';
-import { OpenLayers, HeatMap } from '@stickyboard/openlayers';
 import { makeStyles } from '@material-ui/core/styles';
 
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-
-import SectionTitle from './SectionTitle';
-import { ChartSection, tabStyles } from './SupportChart';
+import { OpenLayers, HeatMap } from '@stickyboard/openlayers';
+import IntroSection from './IntroSection';
+import IntroTab from './IntroTab';
 
 export const MAP = 0;
 export const HEAT_MAP = 1;
+
 const pointList = [
     { geometry: [117.2264, 31.8257], weight: 1 },
     { geometry: [116.4142, 40.1824], weight: 1 },
@@ -271,7 +268,7 @@ const pointList = [
     { geometry: [-81.0755, 29.028], weight: 0.05 },
 ];
 
-const gridStyles = makeStyles({
+const mapStyles = makeStyles({
     map: {
         width: '100%',
         padding: '50px',
@@ -281,38 +278,24 @@ const gridStyles = makeStyles({
 
 export default function SupportMap() {
     const [mapMode, setMapMode] = useState(MAP);
-    const classes = gridStyles();
-    const tabClasses = tabStyles();
+    const classes = mapStyles();
 
-    const handleChange = (event, newValue) => {
-        setMapMode(newValue);
+    const onChangeMode = (event, mode) => {
+        setMapMode(mode);
     };
 
     return (
-        <ChartSection>
-            <SectionTitle title={'Supports map and layer components'} />
+        <IntroSection title={'Supports map and layer components'}>
             <small>
                 For more information, please see the
                 {mapMode === MAP ? " 'Map' " : " 'HeatMap' "}
                 menu of components.
             </small>
-            <div>
-                <AppBar
-                    position="static"
-                    elevation={0}
-                    className={tabClasses.appBar}>
-                    <Tabs
-                        value={mapMode}
-                        onChange={handleChange}
-                        aria-label="map tabs">
-                        <Tab className={tabClasses.firstLabel} label="Map" />
-                        <Tab
-                            className={tabClasses.secondLabel}
-                            label="HeatMap"
-                        />
-                    </Tabs>
-                </AppBar>
-                <TabPanel value={mapMode} index={MAP}>
+            <IntroTab
+                mode={mapMode}
+                onChangeMode={onChangeMode}
+                label={['Map', 'HeatMap']}
+                firstTab={
                     <div className={classes.map}>
                         <OpenLayers
                             claaName={classes.map}
@@ -324,8 +307,8 @@ export default function SupportMap() {
                             latitude={37.504296}
                         />
                     </div>
-                </TabPanel>
-                <TabPanel value={mapMode} index={HEAT_MAP}>
+                }
+                secondTab={
                     <div className={classes.map}>
                         <HeatMap
                             zoom={3}
@@ -338,9 +321,9 @@ export default function SupportMap() {
                             pointList={pointList}
                         />
                     </div>
-                </TabPanel>
-            </div>
-        </ChartSection>
+                }
+            />
+        </IntroSection>
     );
 }
 

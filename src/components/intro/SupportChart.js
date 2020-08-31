@@ -1,17 +1,10 @@
 // src/components/intro/SupportChart.js
 
 import React, { useState } from 'react';
-import styled from 'styled-components';
 
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-
-import SectionTitle from './SectionTitle';
 import PageBaseContainer from 'redux/containers/PageBaseContainer';
+import IntroSection from './IntroSection';
+import IntroTab from './IntroTab';
 
 export const CHART = 0;
 export const HIGH_CHART = 1;
@@ -120,90 +113,37 @@ const initialHighBlocks = [
     { i: 'HighchartsBoxPlot' },
 ];
 
-export const tabStyles = makeStyles({
-    appBar: {
-        background: 'none',
-    },
-    firstLabel: {
-        margin: '0 0 0 auto',
-    },
-    secondLabel: {
-        float: 'right',
-    },
-});
-
 export default function SupportChart() {
     const [chartMode, setChartMode] = useState(CHART);
-    const classes = tabStyles();
 
-    const handleChange = (event, newValue) => {
-        setChartMode(newValue);
+    const onChangeMode = (event, mode) => {
+        setChartMode(mode);
     };
 
     return (
-        <ChartSection>
-            <SectionTitle title="Supports various chart" />
+        <IntroSection title={'Supports various chart'}>
             <small>
                 For more charts, please see the
                 {chartMode === CHART ? " 'Chart' " : " 'HighCharts' "}
                 menu of components.
             </small>
-            <div>
-                <AppBar
-                    position="static"
-                    elevation={0}
-                    className={classes.appBar}>
-                    <Tabs
-                        value={chartMode}
-                        onChange={handleChange}
-                        aria-label="chart tabs">
-                        <Tab className={classes.firstLabel} label="Chart" />
-                        <Tab
-                            className={classes.secondLabel}
-                            label="HighCharts"
-                        />
-                    </Tabs>
-                </AppBar>
-                <TabPanel value={chartMode} index={CHART}>
+            <IntroTab
+                mode={chartMode}
+                onChangeMode={onChangeMode}
+                label={['Charts', 'HighCharts']}
+                firstTab={
                     <PageBaseContainer
                         initialLayout={initialChartLayout}
                         initialBlocks={initialChartBlocks}
                     />
-                </TabPanel>
-                <TabPanel value={chartMode} index={HIGH_CHART}>
+                }
+                secondTab={
                     <PageBaseContainer
                         initialLayout={initialHighLayout}
                         initialBlocks={initialHighBlocks}
                     />
-                </TabPanel>
-            </div>
-        </ChartSection>
+                }
+            />
+        </IntroSection>
     );
 }
-
-function TabPanel({ value, index, children }) {
-    if (value !== index) {
-        return null;
-    }
-    return (
-        <Typography component="div">
-            <Box>{children}</Box>
-        </Typography>
-    );
-}
-
-export const ChartSection = styled.section`
-    margin: 100px auto;
-
-    display: flex;
-    flex-direction: column;
-
-    max-width: 1350px;
-    width: 100%;
-    min-height: 850px;
-
-    & small {
-        margin: 0 0 0 25px;
-        font-size: 15px;
-    }
-`;
