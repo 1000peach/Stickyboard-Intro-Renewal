@@ -16,6 +16,12 @@ const HighchartsPieChart = loadable(() => import('./HighchartsPieChart'));
 const HighchartsPolarChart = loadable(() => import('./HighchartsPolarChart'));
 const HighchartsAreaChart = loadable(() => import('./HighchartsAreaChart'));
 const HighchartsBoxPlot = loadable(() => import('./HighchartsBoxPlot'));
+// Weather
+const OpenWeatherMap = loadable(() => import('./OpenWeatherMap'));
+const OpenWeatherMap3days = loadable(() => import('./OpenWeatherMap3days'));
+const OpenWeatherMap7days = loadable(() => import('./OpenWeatherMap7days'));
+const YahooWeather = loadable(() => import('./YahooWeather'));
+const YahooWeatherForecast = loadable(() => import('./YahooWeatherForecast'));
 
 export default {
     Recharts: [
@@ -80,6 +86,33 @@ export default {
             Name: 'HighchartsBoxPlot',
             Description: 'HighchartsBoxPlot sample',
             Component: HighchartsBoxPlot,
+        },
+    ],
+    Weather: [
+        {
+            Name: 'OpenWeatherMap',
+            Description: 'OpenWeatherMap sample',
+            Component: OpenWeatherMap,
+        },
+        {
+            Name: 'OpenWeatherMap3days',
+            Description: 'OpenWeatherMap3days sample',
+            Component: OpenWeatherMap3days,
+        },
+        {
+            Name: 'OpenWeatherMap7days',
+            Description: 'OpenWeatherMap7days sample',
+            Component: OpenWeatherMap7days,
+        },
+        {
+            Name: 'YahooWeather',
+            Description: 'YahooWeather sample',
+            Component: YahooWeather,
+        },
+        {
+            Name: 'YahooWeatherForecast',
+            Description: 'YahooWeatherForecast sample',
+            Component: YahooWeatherForecast,
         },
     ],
 };

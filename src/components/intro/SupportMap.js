@@ -326,14 +326,3 @@ export default function SupportMap() {
         </IntroSection>
     );
 }
-
-function TabPanel({ value, index, children }) {
-    if (value !== index) {
-        return null;
-    }
-    return (
-        <Typography component="div">
-            <Box>{children}</Box>
-        </Typography>
-    );
-}

@@ -3,9 +3,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import GetStarted from '../intro/GetStarted';
-import SupportChart from '../intro/SupportChart';
-import SupportMap from '../intro/SupportMap';
+import GetStarted from './GetStarted';
+import SupportChart from './SupportChart';
+import SupportMap from './SupportMap';
+import LayoutCustomization from './LayoutCustomization';
 
 export default function IntroPageContent() {
     return (
@@ -13,6 +14,7 @@ export default function IntroPageContent() {
             <GetStarted />
             <SupportChart />
             <SupportMap />
+            <LayoutCustomization />
         </IntroContent>
     );
 }
