@@ -3,6 +3,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 export default function GetStart() {
     return (
         <StartSection>
@@ -14,20 +20,48 @@ export default function GetStart() {
                 />
                 <StickyBoard>StickyBoard!</StickyBoard>
             </StartTitle>
-            <StartDisc>
-                <Circle>Fully customizable </Circle>Web Admin/Dashboard starter kit based on React.
-            </StartDisc>
-            <GitHubLink>
-                <Star
-                    href="https://github.com/soaple/stickyboard"
-                    target="_blank">
-                    <span>Star</span>
-                </Star>
-                <Follow href="https://github.com/soaple" target="_blank">
-                    <span>Follow @soaple</span>
-                </Follow>
-            </GitHubLink>
+            <StartDesc>
+                <Circle>Fully customizable </Circle>Web Admin/Dashboard starter
+                kit based on React.
+            </StartDesc>
+            <BtnGithub
+                name={'Star'}
+                link={'https://github.com/soaple/stickyboard'}
+            />
+            <BtnGithub
+                name={'Follow @soaple'}
+                link={'https://github.com/soaple'}
+            />
         </StartSection>
+    );
+}
+
+const btnStyles = makeStyles({
+    btn: {
+        margin: '50px 10px',
+        height: '40px',
+
+        fontSize: '16px',
+        fontWeight: 'bold',
+        backgroundColor: 'rgb(255, 193, 7)',
+
+        '&:hover': {
+            backgroundColor: '#F2B600',
+        },
+    },
+});
+
+function BtnGithub({ name, link }) {
+    const classes = btnStyles();
+
+    return (
+        <Button
+            className={classes.btn}
+            variant="contained"
+            startIcon={<FontAwesomeIcon icon={faGithub} />}
+            onClick={() => window.open(link)}>
+            {name}
+        </Button>
     );
 }
 
@@ -35,6 +69,7 @@ const StartSection = styled.section`
     margin: auto;
     max-width: 1250px;
     width: 100%;
+    text-align: center;
 `;
 
 const StartTitle = styled.p`
@@ -78,52 +113,7 @@ export const Circle = styled.span`
     }
 `;
 
-const StartDisc = styled.p`
+const StartDesc = styled.p`
     font-size: 18px;
     text-align: center;
-`;
-
-const GitHubLink = styled.div`
-    max-width: 500px;
-    width: 100%;
-
-    display: flex;
-    justify-content: space-evenly;
-    margin: 50px auto;
-`;
-
-const LinkBtn = styled.a`
-    height: 50px;
-    display: flex;
-    align-items: center;
-
-    text-decoration: none;
-    text-align: center;
-    font-size: 15px;
-
-    background-color: rgb(255, 193, 7);
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    & span {
-        margin: 0 auto;
-        color: black;
-        font-weight: bold;
-    }
-
-    &:hover,
-    &:active {
-        transform: scale(0.9);
-        transition: all 0.2s ease-in-out;
-        background-color: orange;
-    }
-`;
-
-const Star = styled(LinkBtn)`
-    width: calc(100% / 5);
-`;
-
-const Follow = styled(LinkBtn)`
-    width: calc(100% / 3);
 `;
