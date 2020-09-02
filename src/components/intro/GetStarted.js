@@ -10,6 +10,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default function GetStart() {
+    const stickyboardURL = 'https://github.com/soaple/stickyboard';
+
     return (
         <StartSection>
             <StartTitle>
@@ -24,21 +26,26 @@ export default function GetStart() {
                 <Circle>Fully customizable </Circle>Web Admin/Dashboard starter
                 kit based on React.
             </StartDesc>
-            <BtnGithub
-                name={'Star'}
-                link={'https://github.com/soaple/stickyboard'}
-            />
-            <BtnGithub
-                name={'Follow @soaple'}
-                link={'https://github.com/soaple'}
-            />
+
+            <BtnDiv>
+                <BtnGithub name={'Star'} link={stickyboardURL} />
+                <div style={{ width: '10px' }}></div>
+                <BtnGithub
+                    name={'Follow @soaple'}
+                    link={'https://github.com/soaple'}
+                />
+                <a href={stickyboardURL} target="_blank">
+                    <StarCnt>
+                        <p>128</p>
+                    </StarCnt>
+                </a>
+            </BtnDiv>
         </StartSection>
     );
 }
 
 const btnStyles = makeStyles({
     btn: {
-        margin: '50px 10px',
         height: '40px',
 
         fontSize: '16px',
@@ -70,6 +77,16 @@ const StartSection = styled.section`
     max-width: 1250px;
     width: 100%;
     text-align: center;
+
+    & a {
+        text-decoration: none;
+        color: black;
+
+        &:hover,
+        &:active {
+            color: rgb(255, 193, 7);
+        }
+    }
 `;
 
 const StartTitle = styled.p`
@@ -116,4 +133,59 @@ export const Circle = styled.span`
 const StartDesc = styled.p`
     font-size: 18px;
     text-align: center;
+`;
+
+const BtnDiv = styled.div`
+    position: relative;
+
+    margin: auto;
+    width: 320px;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const StarCnt = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 23px;
+
+    margin: 0 15px;
+    width: 50px;
+    height: 30px;
+
+    font-weight: bold;
+    background-color: #fafafa;
+
+    border: 2px solid #d4d4d4;
+    border-radius: 4px;
+
+    display: inline-flex;
+    justify-content: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -7px;
+
+        width: 15px;
+        height: 15px;
+
+        background-color: #fafafa;
+        border: 2px solid #d4d4d4;
+
+        transform: rotate(-45deg);
+    }
+
+    & p {
+        position: relative;
+        margin: auto;
+        padding: 2px;
+        height: 100%;
+
+        background-color: #fafafa;
+        border-radius: 4px;
+    }
 `;
