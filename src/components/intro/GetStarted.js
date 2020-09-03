@@ -3,15 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-
 export default function GetStart() {
-    const stickyboardURL = 'https://github.com/soaple/stickyboard';
-
     return (
         <StartSection>
             <StartTitle>
@@ -28,47 +20,22 @@ export default function GetStart() {
             </StartDesc>
 
             <BtnDiv>
-                <BtnGithub name={'Star'} link={stickyboardURL} />
-                <div style={{ width: '10px' }}></div>
-                <BtnGithub
-                    name={'Follow @soaple'}
-                    link={'https://github.com/soaple'}
+                <iframe
+                    src="https://ghbtns.com/github-btn.html?user=soaple&repo=stickyboard&type=star&count=true&size=large"
+                    frameBorder="0"
+                    scrolling="0"
+                    width="140"
+                    height="30"
                 />
-                <a href={stickyboardURL} target="_blank">
-                    <StarCnt>
-                        <p>128</p>
-                    </StarCnt>
-                </a>
+                <iframe
+                    src="https://ghbtns.com/github-btn.html?user=soaple&type=follow&count=true&size=large"
+                    frameBorder="0"
+                    scrolling="0"
+                    width="160px"
+                    height="30px"
+                />
             </BtnDiv>
         </StartSection>
-    );
-}
-
-const btnStyles = makeStyles({
-    btn: {
-        height: '40px',
-
-        fontSize: '16px',
-        fontWeight: 'bold',
-        backgroundColor: 'rgb(255, 193, 7)',
-
-        '&:hover': {
-            backgroundColor: '#F2B600',
-        },
-    },
-});
-
-function BtnGithub({ name, link }) {
-    const classes = btnStyles();
-
-    return (
-        <Button
-            className={classes.btn}
-            variant="contained"
-            startIcon={<FontAwesomeIcon icon={faGithub} />}
-            onClick={() => window.open(link)}>
-            {name}
-        </Button>
     );
 }
 
@@ -136,56 +103,11 @@ const StartDesc = styled.p`
 `;
 
 const BtnDiv = styled.div`
-    position: relative;
-
     margin: auto;
-    width: 320px;
     height: 150px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-`;
-
-const StarCnt = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 23px;
-
-    margin: 0 15px;
-    width: 50px;
-    height: 30px;
-
-    font-weight: bold;
-    background-color: #fafafa;
-
-    border: 2px solid #d4d4d4;
-    border-radius: 4px;
-
-    display: inline-flex;
-    justify-content: center;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: -7px;
-
-        width: 15px;
-        height: 15px;
-
-        background-color: #fafafa;
-        border: 2px solid #d4d4d4;
-
-        transform: rotate(-45deg);
-    }
-
-    & p {
-        position: relative;
-        margin: auto;
-        padding: 2px;
-        height: 100%;
-
-        background-color: #fafafa;
-        border-radius: 4px;
-    }
+}
 `;

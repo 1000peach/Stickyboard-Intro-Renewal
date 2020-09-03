@@ -16,7 +16,6 @@
         "production": "cross-env NODE_ENV=production NODE_PATH=./src node app.js"
     },
     "dependencies": {
-        "@fortawesome/free-brands-svg-icons": "^5.14.0",
         "@loadable/component": "^5.12.0",
         "@material-ui/core": "^4.9.13",
         "@material-ui/icons": "^4.9.1",
