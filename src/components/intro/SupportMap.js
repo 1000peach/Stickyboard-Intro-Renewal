@@ -273,6 +273,9 @@ const mapStyles = makeStyles({
         width: '100%',
         padding: '50px',
         cursor: 'pointer',
+        '@media (max-width: 828px)': {
+            padding: '20px',
+        },
     },
 });
 

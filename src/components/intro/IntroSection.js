@@ -28,4 +28,17 @@ const Section = styled.section`
         margin: 0 0 0 25px;
         font-size: 15px;
     }
+
+    @media (max-width: 828px) {
+        & small {
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 600px) {
+        & small {
+            padding: 0 20px;
+        }
+    }
 `;

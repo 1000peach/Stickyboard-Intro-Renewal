@@ -44,22 +44,16 @@ const StartSection = styled.section`
     max-width: 1250px;
     width: 100%;
     text-align: center;
-
-    & a {
-        text-decoration: none;
-        color: black;
-
-        &:hover,
-        &:active {
-            color: rgb(255, 193, 7);
-        }
-    }
 `;
 
 const StartTitle = styled.p`
     font-size: 30px;
     text-align: center;
     font-weight: bold;
+
+    @media (max-width: 600px) {
+        font-size: 25px;
+    }
 `;
 
 const StartLogo = styled.img`
@@ -100,6 +94,11 @@ export const Circle = styled.span`
 const StartDesc = styled.p`
     font-size: 18px;
     text-align: center;
+
+    @media (max-width: 600px) {
+        font-size: 16px;
+        padding: 0 20px;
+    }
 `;
 
 const BtnDiv = styled.div`

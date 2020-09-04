@@ -22,4 +22,12 @@ export default function IntroPageContent() {
 const IntroContent = styled.div`
     padding: 0 50px;
     width: 100%;
+
+    @media (max-width: 1450px) {
+        padding: 0 30px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 0;
+    }
 `;

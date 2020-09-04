@@ -12,12 +12,18 @@ import Box from '@material-ui/core/Box';
 const tabStyles = makeStyles({
     appBar: {
         background: 'none',
+        '@media (max-width: 828px)': {
+            marginBottom: '10px',
+        },
     },
     firstLabel: {
         margin: '0 0 0 auto',
     },
     secondLabel: {
         float: 'right',
+        '@media (max-width: 828px)': {
+            margin: '0 auto 0 0',
+        },
     },
 });
 
