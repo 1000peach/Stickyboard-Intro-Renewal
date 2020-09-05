@@ -22,7 +22,6 @@ const Section = styled.section`
 
     max-width: 1350px;
     width: 100%;
-    min-height: 850px;
 
     & small {
         margin: 0 0 0 25px;
